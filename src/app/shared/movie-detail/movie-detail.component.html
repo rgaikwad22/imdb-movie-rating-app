@@ -1,0 +1,52 @@
+<section class="movie-detail-section">
+    <div class="movie__intro">
+        <img class="movie__backdrop" [src]="moviesUrl + moviebyid.backdrop_path" />
+    </div>
+    <div class="movie__detail">
+        <div class="movie__detailLeft">
+            <div class="movie__posterBox">
+                <img class="movie__poster" [src]="moviesUrl + moviebyid.poster_path" />
+            </div>
+        </div>
+        <div class="movie__detailRight">
+            <div class="movie__detailRightTop">
+                <div class="movie__name">{{moviebyid.original_title}}</div>
+                <div class="movie__tagline">{{moviebyid.tagline}}</div>
+                <div class="movie__rating">
+                    {{moviebyid.vote_average}}<i class="fas fa-star"></i>
+                    <span class="movie__voteCount">({{moviebyid.vote_count}}) votes</span>
+                </div>
+                <div class="movie__runtime">{{moviebyid.runtime}} mins</div>
+                <div class="movie__releaseDate">Release date: {{moviebyid.release_date}}</div>
+                <div class="movie__genres">
+                    <span *ngFor="let genre of moviebyid.genres" class="movie__genre" id='{{genre.id}}'>{{genre.name}}</span>
+                </div>
+            </div>
+            <div class="movie__detailRightBottom">
+                <div class="synopsisText">Synopsis</div>
+                <div>{{moviebyid.overview}}</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="movie__links">
+        <div class="movie__heading">Useful Links</div>
+        <a [href]="moviebyid.homepage" target="_blank" style="textDecoration: none">
+            <p><span class="movie__homeButton movie__Button">Homepage <i
+                        class="newTab fas fa-external-link-alt"></i></span></p>
+        </a>
+        <a [href]="'https://www.imdb.com/title/' + moviebyid.imdb_id" target="_blank">
+            <p><span class="movie__imdbButton movie__Button">IMDb<i class="newTab fas fa-external-link-alt"></i></span>
+            </p>
+        </a>
+
+    </div>
+    <div class="movie__heading">Production companies</div>
+    <div class="movie__production">
+
+        <span class="productionCompanyImage" *ngFor="let company of moviebyid.production_companies">
+            <img class="movie__productionComapany" [src]="moviesUrl + company.logo_path" />
+            <span>{{company.name}}</span>
+        </span>
+    </div>
+</section>

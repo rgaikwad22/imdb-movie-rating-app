@@ -1,0 +1,29 @@
+<section class="banner-section">
+    <div class="wrapper">
+        <carousel [interval]="2000">
+            <div *ngFor="let movie of movies">
+                <a [routerLink]="['/movie', movie.id]">
+                    <slide>
+                        <figure class="banner-fig">
+                            <img [src]="moviesUrl + movie.backdrop_path" alt="Slide">
+                        </figure>
+                        <div class="banner-discription">
+                            <div class="poster-image-overlay">
+                                <h2 class="poster-title">{{movie ? movie.original_title : ""}}</h2>
+                                <div class="ratings-realise-date">
+                                    <span class="movie-release-date">{{movie ? movie.release_date : ""}}</span>
+                                    <span class="ratings">{{movie ? movie.vote_average : ""}}</span>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="section-para posterImage-description">
+                                    {{movie ? movie.overview : ""}}
+                                </p>
+                            </div>
+                        </div>
+                    </slide>
+                </a>
+            </div>
+        </carousel>
+    </div>
+</section>
+<app-movie-list></app-movie-list>

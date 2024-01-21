@@ -1,0 +1,8 @@
+<section class="movie-list-section">
+    <div class="wrapper">
+        <h2 class="section-heading">{{(movieType ? movieType : "POPULAR").toUpperCase()}}</h2>
+        <div class="movie-list-container" *ngIf="movies">
+            <app-card [movieType]="movieType"></app-card>
+        </div>
+    </div>
+</section>

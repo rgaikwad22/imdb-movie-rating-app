@@ -1,0 +1,58 @@
+.banner-section {
+    min-height: 605px;
+    position: relative;
+}
+
+.banner-fig {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-fig img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: unset;
+}
+
+.carousel {
+    height: 100% !important;
+}
+
+.banner-discription {
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0, 0, 0));
+    bottom: 0;
+    left: 0;
+}
+
+.poster-image-overlay {
+    width: 90%;
+    padding: 5rem 0;
+    margin: 0 auto;
+    max-width: 1360px;
+    left: 0;
+    color: #fff;
+}
+
+.poster-title {
+    font-size: 64px;
+    font-weight: 900;
+}
+
+.posterImage-description {
+    width: 50%;
+    margin-bottom: 10px;
+    font-style: italic;
+    line-height: 18px;
+}
+
+.ratings-realise-date {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.movie-release-date {
+    margin-right: 40px;
+}
